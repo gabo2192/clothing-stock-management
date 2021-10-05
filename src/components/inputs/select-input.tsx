@@ -10,11 +10,11 @@ interface InputProps {
   label: string;
   placeholder: string;
   helper: string;
-  value: string;
-  handleChange: (value: string) => void;
+  value: { id: string; name: string } | null;
+  handleChange: (id: string) => void;
   options: {
-    value: string;
-    text: string;
+    id: string;
+    name: string;
   }[];
 }
 
@@ -32,12 +32,12 @@ const SelectInput: React.FC<InputProps> = ({
       <FormLabel>{label}</FormLabel>
       <Select
         placeholder={placeholder}
-        value={value}
+        value={value?.id}
         onChange={(e) => handleChange(e.target.value)}
       >
         {options.map((option, index) => (
-          <option key={index} value={option.value}>
-            {option.text}
+          <option key={index} value={option.id}>
+            {option.name}
           </option>
         ))}
       </Select>

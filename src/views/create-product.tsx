@@ -1,8 +1,8 @@
 import { Box, Container } from "@chakra-ui/layout";
 import { useState } from "react";
-import DateInput from "../components/date-input";
-import FieldInput from "../components/field-input";
-import SelectInput from "../components/select-input";
+import DateInput from "../components/inputs/date-input";
+import FieldInput from "../components/inputs/field-input";
+import SelectInput from "../components/inputs/select-input";
 import MainLayout from "../layouts/main";
 
 const CreateProducts = () => {
@@ -27,7 +27,7 @@ const CreateProducts = () => {
               setState((prev) => ({ ...prev, name: value }))
             }
           />
-          <SelectInput
+          {/* <SelectInput
             name="size"
             label="Size"
             helper="You need to add a size"
@@ -90,7 +90,7 @@ const CreateProducts = () => {
               },
             ]}
             placeholder="Choose a gender"
-          />
+          /> */}
           <DateInput
             name="entryDate"
             label="Entry Date"
